@@ -1,6 +1,6 @@
 # Statistics library
 
-A simple statistics library providing descriptive statistics and pseudo randon generators.
+A simple library providing descriptive statistics and pseudo randon generators.
 
 Pepe Gallardo, 2023
 
