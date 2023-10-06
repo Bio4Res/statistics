@@ -17,6 +17,11 @@ public class Random implements RandomGenerator {
    */
   public final static Random random = new Random();
 
+  /**
+   * Stores last set seed or null if none was set.
+   */
+  private static Long seed = null;
+
   private final static RandomGeneratorFactory<RandomGenerator> factory =
       RandomGeneratorFactory.of("Xoshiro256PlusPlus");
   private static RandomGenerator generator = factory.create();
@@ -34,9 +39,10 @@ public class Random implements RandomGenerator {
   }
 
   /**
-   * Initializes the random generator with an arbitrary seed.
+   * Initializes the random generator with an arbitrary seed.RandomGenerator
    */
   public void setSeed() {
+    Random.seed = null;
     generator = factory.create();
   }
 
@@ -46,7 +52,16 @@ public class Random implements RandomGenerator {
    * @param seed seed for initializing random generator.
    */
   public void setSeed(long seed) {
+    Random.seed = seed;
     generator = factory.create(seed);
+  }
+
+  /**
+   * Returns current seed or null if none was set.
+   * @return current seed or null if none was set.
+   */
+  public Long getSeed() {
+    return Random.seed;
   }
 
   /**
