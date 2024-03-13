@@ -16,7 +16,7 @@ If you are using Maven, the following dependency can be added to your project:
     <dependency>
     	<groupId>es.uma.lcc.caesium</groupId>
     	<artifactId>statistics</artifactId>
-  	<version>1.0</version>
+  	<version>1.0.0</version>
     </dependency>
 ~~~
 
