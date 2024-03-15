@@ -98,10 +98,9 @@ public class Descriptive {
     var counters = new HashMap<T, Integer>();
     for (var element : data) {
       Integer count = counters.get(element);
-      counters.put(element, count == 0 ? 1 : count + 1);
+      counters.put(element, count == null ? 1 : count + 1);
     }
 
-    var iterator = data.iterator();
     var maxCounter = -1;
     T mode = null;
     for (var entry : counters.entrySet()) {
